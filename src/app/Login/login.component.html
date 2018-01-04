@@ -1,0 +1,55 @@
+<section class="login p-fixed d-flex text-center bg-primary common-img-bg">
+  <!-- starts -->
+  <div class="auth-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- Authentication card start -->
+        <div class="login-card card-body auth-body">
+          <form class="md-float-material" name="form" (ngSubmit)="f.form.valid &&login()" #f="ngForm" novalidate>
+
+            <div class="auth-box">
+              <div class="row m-b-21">
+                <div class="col-md-4">
+                  <h3 class="text-left txt-primary">Sign In</h3>
+                  <div>majutharan</div>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <input type="text" name="username" class="form-control" placeholder="Username" [(ngModel)]="model.username" #username="ngModel" required/>
+                <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+                <span class="md-line"></span>
+
+              </div>
+              <div class="input-group">
+                <input type="password" name="password" class="form-control" placeholder="password" [(ngModel)]="model.password" #password="ngModel" required/>
+                <div *ngIf="f.submitted && !password.valid">Password is required</div>
+                <span class="md-line"></span>
+
+              </div>
+              <div class="row m-t-25 text-left">
+                <div class="col-sm-6 col-xs-12">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label>
+                      <input type="checkbox" value="">
+                      <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                      <span class="text-inverse">Remember me</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xs-12 forgot-phone text-right">
+                  <a [routerLink]="['/authentication/forgot']" class="text-right f-w-600 text-inverse"> Forget Password?</a>
+                </div>
+              </div>
+              <div class="row m-t-30">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">LOGIN</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
